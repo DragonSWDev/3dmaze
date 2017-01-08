@@ -1,6 +1,10 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <iostream>
+#include <fstream>
+#include <vector>
+
 #include <irrlicht/irrlicht.h>
 
 //Irrlicht and C++ namespaces
@@ -10,6 +14,7 @@ using namespace scene;
 using namespace video;
 using namespace io;
 using namespace gui;
+
 using namespace std;
 
 
@@ -22,7 +27,7 @@ private:
     IVideoDriver *driver;
     ISceneManager *scenemgr;
     
-    bool loadConfig();
+    void loadConfig();
     
 public:
     Game();
