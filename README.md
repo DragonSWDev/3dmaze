@@ -7,7 +7,7 @@ This is the simple 3D game written in C++ with Irrlicht Engine. You have to solv
 
 #### 2. Get source code
 
-    git clone https://github.com/BlackDragonK99/sfml-snake && cd sfml-snake
+    git clone https://github.com/BlackDragonK99/3dmaze && cd 3dmaze
     
 #### 3. Configure and build
 **Unix-like (Linux, BSD etc.)**
