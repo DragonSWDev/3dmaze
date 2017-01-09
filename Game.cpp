@@ -11,6 +11,13 @@ Game::Game()
     
     //Try to load configuration
     loadConfig();
+    
+    //If user set wrong size, correct it
+    if(mazeSize > MAZE_MAXSIZE)
+        mazeSize = MAZE_MAXSIZE;
+    
+    if(mazeSize < MAZE_MINSIZE)
+        mazeSize = MAZE_MINSIZE;
 }
 
 void Game::loadConfig()

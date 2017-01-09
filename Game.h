@@ -1,6 +1,9 @@
 #ifndef GAME_H
 #define GAME_H
 
+#define MAZE_MAXSIZE 50
+#define MAZE_MINSIZE 10
+
 #include <iostream>
 #include <fstream>
 #include <vector>
