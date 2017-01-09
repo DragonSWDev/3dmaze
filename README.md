@@ -43,4 +43,4 @@ You can specify options by creating config.cfg file.
 
 **fullscreen=false** - run in windowed or full screen mode
 
-**mazeSize=20** - specify maze size - min is 8, max is 128
+**mazeSize=20** - specify maze size - min is 10, max is 50
