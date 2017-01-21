@@ -112,14 +112,34 @@ void Game::startGame()
     
     device->setWindowCaption(L"3D Maze");
     
+    //Example map to check if it working
+    Map example(20);
+    example.createMap(driver, scenemgr);
+    
+    IMeshSceneNode *map = scenemgr->addMeshSceneNode(example.getMapMesh());
+    map->setMaterialFlag(EMF_LIGHTING, true);
+    map->getMaterial(0).FogEnable = true;
+    
+    ICameraSceneNode *camera = scenemgr->addCameraSceneNodeFPS();
+    camera->setTarget(vector3df(90,4,45));
+    camera->setFarValue(1000);
+    device->getCursorControl()->setVisible(false);
+    
+    scenemgr->setAmbientLight(SColorf(1, 1, 1, 255));
+    
     //Main loop
     while(device->run())
     {
-        driver->beginScene(true, true, SColor(255,0,0,0));
+        if(device->isWindowActive())
+        {
+            driver->beginScene(true, true, SColor(255,0,0,0));
         
-        scenemgr->drawAll();
+            scenemgr->drawAll();
         
-        driver->endScene();
+            driver->endScene();
+        }
+        else
+            device->yield();
     }
     
     device->drop();

@@ -10,6 +10,9 @@
 
 #include <irrlicht/irrlicht.h>
 
+//Game headers
+#include "Map.h"
+
 //Irrlicht and C++ namespaces
 using namespace irr;
 using namespace core;
