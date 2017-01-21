@@ -3,6 +3,8 @@
 
 #include <irrlicht/irrlicht.h>
 
+#include "MazeGenerator.h"
+
 /* This project using MeshCombiner created by Lonesome Ducky which You can find here:
    http://irrlicht.sourceforge.net/forum/viewtopic.php?t=39598 */
 #include "MeshCombiner/CMeshCombiner.h"

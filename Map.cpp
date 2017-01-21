@@ -13,6 +13,10 @@ Map::Map(int mazeSize)
             mapArray[i][j] = true;
         
     size = mazeSize;
+    
+    //Create generator and generate maze
+    MazeGenerator generator;
+    generator.generateMaze(size, mapArray);
 }
 
 Map::~Map()
@@ -26,6 +30,7 @@ Map::~Map()
 
 void Map::createMap(IVideoDriver *driver, ISceneManager *scenemgr)
 {
+    //Use Mesh Combiner to create map by using cubes (merge cubes to one mesh)
     array <IMeshSceneNode*> nodes;
     
     mazeTexture = driver->getTexture("textures/wall.tga");
@@ -39,8 +44,8 @@ void Map::createMap(IVideoDriver *driver, ISceneManager *scenemgr)
             
             if(mapArray[i][j])
                 wall->setPosition(vector3df(j*30, 0, i*30));
-            else
-                wall->setPosition(vector3df(j*30, -30, i*30));
+            //else
+                //wall->setPosition(vector3df(j*30, -30, i*30));
             
             wall->setMaterialTexture(0, mazeTexture);
                 
@@ -52,6 +57,8 @@ void Map::createMap(IVideoDriver *driver, ISceneManager *scenemgr)
     nodes.clear();
 }
 
+
+//Return created mesh
 IMesh *Map::getMapMesh()
 {
     return mapMesh;

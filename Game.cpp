@@ -8,6 +8,7 @@ Game::Game()
     vsync = false;
     fullscreen = false;
     fog = true;
+    mazeSize = 40;
     
     //Try to load configuration
     loadConfig();
@@ -107,18 +108,20 @@ void Game::startGame()
     //Create Irrlicht device and get pointer to driver and scene manager
     device = createDevice(EDT_OPENGL, dimension2d<u32>(width, height), 32, fullscreen, false, vsync, 0);
     
+    srand(time(0));
+    
     driver = device->getVideoDriver();
     scenemgr = device->getSceneManager();
     
     device->setWindowCaption(L"3D Maze");
     
-    //Example map to check if it working
-    Map example(20);
-    example.createMap(driver, scenemgr);
+    //Create map
+    Map map(mazeSize);
+    map.createMap(driver, scenemgr);
     
-    IMeshSceneNode *map = scenemgr->addMeshSceneNode(example.getMapMesh());
-    map->setMaterialFlag(EMF_LIGHTING, true);
-    map->getMaterial(0).FogEnable = true;
+    IMeshSceneNode *mapNode = scenemgr->addMeshSceneNode(map.getMapMesh());
+    mapNode->setMaterialFlag(EMF_LIGHTING, true);
+    mapNode->getMaterial(0).FogEnable = false;
     
     ICameraSceneNode *camera = scenemgr->addCameraSceneNodeFPS();
     camera->setTarget(vector3df(90,4,45));
