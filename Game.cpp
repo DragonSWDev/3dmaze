@@ -19,6 +19,8 @@ Game::Game()
     
     if(mazeSize < MAZE_MINSIZE)
         mazeSize = MAZE_MINSIZE;
+    
+    cout << "\nStarting mode " << width << "x" << height << ", vsync=" << vsync << ", fullscreen=" << fullscreen << ", maze size=" << mazeSize << ", fog=" << fog << endl;
 }
 
 void Game::loadConfig()
