@@ -7,7 +7,7 @@ Game::Game()
     height = 600;
     vsync = false;
     fullscreen = false;
-    fog = true;
+    fog = false;
     mazeSize = 40;
     
     //Try to load configuration
@@ -123,7 +123,11 @@ void Game::startGame()
     
     IMeshSceneNode *mapNode = scenemgr->addMeshSceneNode(map.getMapMesh());
     mapNode->setMaterialFlag(EMF_LIGHTING, true);
-    mapNode->getMaterial(0).FogEnable = false;
+    
+    if(!fog)
+        mapNode->getMaterial(0).FogEnable = false;
+    else
+        mapNode->getMaterial(0).FogEnable = true;
     
     ICameraSceneNode *camera = scenemgr->addCameraSceneNodeFPS();
     camera->setTarget(vector3df(90,4,45));
@@ -131,6 +135,10 @@ void Game::startGame()
     device->getCursorControl()->setVisible(false);
     
     scenemgr->setAmbientLight(SColorf(1, 1, 1, 255));
+    
+    //Enable fog when it is set in configuration
+    if(fog)
+        driver->setFog(SColor(0, 0, 0, 0), EFT_FOG_EXP2, 5, 100, 0.017, false, true);
     
     //Main loop
     while(device->run())
