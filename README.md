@@ -7,7 +7,7 @@ This is the simple 3D game written in C++ with Irrlicht Engine. You have to solv
 
 #### 2. Get source code
 
-    git clone https://github.com/BlackDragonDev/3dmaze && cd 3dmaze
+    git clone https://github.com/BlackDragonDv/3dmaze && cd 3dmaze
     
 #### 3. Configure and build
 **Unix-like (Linux, BSD etc.)**
@@ -23,7 +23,7 @@ If You have Irrlicht installed in custom location, You can specify include and l
     
 **Windows**
 
-There is cmake for Windows, but it is recommended to use Visual Studio. Download and install VS, create new project, set up Irrlicht, import 3D Maze source code to the created project and compile it. You can find instructions about using Irrlicht with Visual Studio here:
+You can use cmake for Windows to generate Visual Studio project, or setup project manually. You can find instructions about using Irrlicht with Visual Studio here:
 http://irrlicht.sourceforge.net/docu/example001.html
     
 #### 4. Copy compiled binary (3dmaze) to the desired directory and put directory font with content next to binary
