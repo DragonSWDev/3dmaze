@@ -1,5 +1,5 @@
-# 3D Maze - Inactive
-This is the simple 3D game written in C++ with Irrlicht Engine. You have to solve randomly generated maze. Game is currently unfinished.
+# 3D Maze - Abandoned
+This is the simple 3D game written in C++ with Irrlicht Engine. You have to solve randomly generated maze. Game is currently unfinished. Note: Project is officially abandoned (well it was abandoned long time ago but now it's oficially!). I've created another C++ 3D maze game (with SDL2 and OpenGL), please check glMaze repository for source code.
 
 ### Installation guide
 
